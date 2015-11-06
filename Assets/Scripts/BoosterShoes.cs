@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class BoosterShoes : UtilityTools {
 
@@ -14,10 +15,15 @@ public class BoosterShoes : UtilityTools {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (Rags.m_IsGrounded == false)
 		{
-			Rags.jumpNow();
+			if (Input.GetButtonDown("Jump"))
+			{
+				Rags.jumpNow();
+			}
 		}
 
+			}
+
 	}
-}
