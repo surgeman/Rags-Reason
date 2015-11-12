@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager god { get; private set; }
 
-    public SwitchPlayer ragsReason;
-	public ThirdPersonCharacter ragsObject;
+    public ThirdPersonCharacter ragsObject;
     public Ball reasonObject;
+
+    public Camera ragsCam;
+    public Camera reasonCam;
 
 
 
