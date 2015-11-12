@@ -16,6 +16,8 @@ public class SwitchPlayer : MonoBehaviour {
 
     AICharacterControl ragsAIControl;
 
+    FollowPlayer reasonToRags;
+    
     Camera ragsPlayerCam;
     Camera reasonPlayerCam;
     
@@ -43,7 +45,10 @@ public class SwitchPlayer : MonoBehaviour {
 	{
        ragsUserControl = GameManager.god.ragsObject.GetComponent<ThirdPersonUserControl>();
        ragsAIControl = GameManager.god.ragsObject.GetComponent<AICharacterControl>();
+
        reasonUserControl = GameManager.god.reasonObject.GetComponent<BallUserControl>();
+       reasonToRags = GameManager.god.reasonObject.GetComponent<FollowPlayer>();
+
        ragsPlayerCam = GameManager.god.ragsCam;
        reasonPlayerCam = GameManager.god.reasonCam; 
 
@@ -65,6 +70,8 @@ public class SwitchPlayer : MonoBehaviour {
 
         ragsPlayerCam.enabled = playerRagsActive;
         reasonPlayerCam.enabled = playerReasonActive;
+
+        reasonToRags.enabled = playerRagsActive;
 
         if (Input.GetKeyDown ("1")) {
 			playerRagsActive = true;

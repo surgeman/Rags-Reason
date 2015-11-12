@@ -5,15 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class FollowPlayer : MonoBehaviour {
 
-	//public float moveSpeed;
-	//public float turnSpeed;
-	//public int turnSmoothing;
-	//public int maxDistance;
 
-	//public Vector3 movement;
-	//public Vector3 turning;
-
-	//public Transform myTransform;
 	public GameObject target;
 	public GameObject self;
 
