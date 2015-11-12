@@ -24,7 +24,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 
         // Update is called once per frame
-        private void Update()
+        public void Update()
         {
             if (target != null)
             {

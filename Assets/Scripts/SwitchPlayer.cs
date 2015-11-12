@@ -1,18 +1,23 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityStandardAssets.Characters.ThirdPerson;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class SwitchPlayer : MonoBehaviour {
 
 	public GameObject playerRags;
 	public GameObject playerReason;
 
-	//private PlatformController playerRags;
-	//private PlatformController playerReason;
+   ThirdPersonUserControl ragsUserControl;
 
-	bool playerRagsActive = true;
+    bool playerRagsActive = true;
 	bool playerReasonActive = false;
 
-	private GameObject defaultCamera;
+    //ThirdPersonCharacter Rags;
+
+    private GameObject defaultCamera;
 	private GameObject cameraPlayerRags;
 	private GameObject cameraPlayerReason;
 
@@ -28,9 +33,10 @@ public class SwitchPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start() 
 	{
-		//player1Input = player1.GetComponent("(your controller)");
-		//player2Input = player2.GetComponent("(your controller)");
-	}
+       ragsUserControl = GameManager.god.ragsObject.GetComponent<ThirdPersonUserControl>();
+        //player1Input = player1.GetComponent("(your controller)");
+        //player2Input = player2.GetComponent("(your controller)");
+    }
 	
 	// Update is called once per frame
 	void Update() 
@@ -38,15 +44,22 @@ public class SwitchPlayer : MonoBehaviour {
 		if (Input.GetKeyDown ("1")) {
 			playerRagsActive = true;
 			playerReasonActive = false;
-			defaultCamera.transform.position = cameraPlayerRags.transform.position;
-			defaultCamera.transform.rotation = cameraPlayerRags.transform.rotation;
-		}
+
+            ragsUserControl.enabled = true;
+
+            //defaultCamera.transform.position = cameraPlayerRags.transform.position;
+            //defaultCamera.transform.rotation = cameraPlayerRags.transform.rotation;
+        }
 
 		else if (Input.GetKeyDown ("2")) {  
 			playerReasonActive = true;
 			playerRagsActive = false;
-			defaultCamera.transform.position = cameraPlayerReason.transform.position;
-			defaultCamera.transform.rotation = cameraPlayerReason.transform.rotation;
+
+            //turn of thirdplayercontroller
+            ragsUserControl.enabled = false;
+
+            //defaultCamera.transform.position = cameraPlayerReason.transform.position;
+			//defaultCamera.transform.rotation = cameraPlayerReason.transform.rotation;
 		}
 		/*if(playerRagsActive){
 			switchToPlayer(player1Input, player2Input, cameraPlayer1);  
