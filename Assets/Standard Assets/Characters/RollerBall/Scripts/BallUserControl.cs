@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Vehicles.Ball
@@ -14,6 +15,8 @@ namespace UnityStandardAssets.Vehicles.Ball
         private Transform cam; // A reference to the main camera in the scenes transform
         private Vector3 camForward; // The current forward direction of the camera
         private bool jump; // whether the jump button is currently pressed
+
+        //HoverBall forceJump;
 
 
         private void Awake()

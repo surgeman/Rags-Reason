@@ -16,7 +16,7 @@ public class SwitchPlayer : MonoBehaviour {
 
     AICharacterControl ragsAIControl;
 
-    FollowPlayer reasonToRags;
+    FollowRags reasonToRags;
     
     Camera ragsPlayerCam;
     Camera reasonPlayerCam;
@@ -47,7 +47,7 @@ public class SwitchPlayer : MonoBehaviour {
        ragsAIControl = GameManager.god.ragsObject.GetComponent<AICharacterControl>();
 
        reasonUserControl = GameManager.god.reasonObject.GetComponent<BallUserControl>();
-       reasonToRags = GameManager.god.reasonObject.GetComponent<FollowPlayer>();
+       reasonToRags = GameManager.god.reasonObject.GetComponent<FollowRags>();
 
        ragsPlayerCam = GameManager.god.ragsCam;
        reasonPlayerCam = GameManager.god.reasonCam; 
@@ -91,19 +91,8 @@ public class SwitchPlayer : MonoBehaviour {
 
             ragsAIControl.enabled = true;
 
-
-
-            //defaultCamera.transform.position = cameraPlayerReason.transform.position;
-            //defaultCamera.transform.rotation = cameraPlayerReason.transform.rotation;
         }
-		/*if(playerRagsActive){
-			switchToPlayer(player1Input, player2Input, cameraPlayer1);  
-		}*/
-		
-		/*else if(playerReasonActive){
-			switchToPlayer(player2Input, player1Input, cameraPlayer2);  
-		}*/
-		
+	
 	}
 
 }
